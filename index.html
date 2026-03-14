@@ -12,15 +12,19 @@
   <label>css selector: <input type="text"></label>
 
   <h2>Next components</h2>
-  <div data-next-component="wrapper"></div>
-  <button>Add</button>
+  <div data-next-component-add="wrapper"></div>
+  <button data-next-component-add="trigger">Add</button>
 
   <h2>CSS</h2>
   <code>hoge</code>
 
-  <template>
-    <label>css selector: <input type="text"></label>
-    <label><span>🔝</span>margin-top: <input type="text">px</label>
+  <template data-next-component-add="template">
+    <div>
+      <label>css selector: <input type="text"></label>
+      <label><span>🔝</span>margin-top: <input type="text">px</label>
+    </div>
   </template>
+
+  <script src="./js/main.js" type="module"></script>
 </body>
 </html>
