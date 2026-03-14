@@ -10,6 +10,7 @@ class CSSGenerator {
     const calculator = new CSSGeneratorCalculator()
     if(!calculator.isVarid) {
       window.alert('Error: Please check your inputs.')
+      this.display.textContent = ''
       return
     }
     this.display.textContent = calculator.code
