@@ -1,4 +1,4 @@
-class Display {
+class GeneratorDisplay {
   constructor() {
     this.element = document.querySelector('[data-display="wrapper"]')
     Object.freeze(this)
@@ -11,4 +11,4 @@ class Display {
   }
 }
 
-export const display = new Display()
+export const generatorDisplay = new GeneratorDisplay()

@@ -1,7 +1,7 @@
 import { ComponentMain } from './ComponentMain.js';
 import { ComponentNextList } from './ComponentNextList.js';
 
-export class Code {
+export class GeneratorCode {
   constructor() {
     this.component = new ComponentMain()
     this.componentNextList = ComponentNextList.for()

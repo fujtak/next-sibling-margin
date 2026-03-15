@@ -1,12 +1,13 @@
 import { Varidator } from './Varidator.js';
-import { Code } from './Code.js';
 import { ShareURL } from './ShareURL.js';
-import { display } from './Display.js';
+
+import { GeneratorCode } from './GeneratorCode.js';
+import { generatorDisplay } from './GeneratorDisplay.js';
 
 class Generator {
   constructor() {
     this.element = document.querySelector('[data-generator="trigger"]')
-    this.display = display
+    this.display = generatorDisplay
     Object.freeze(this)
   }
   #generate() {
@@ -15,7 +16,7 @@ class Generator {
       window.alert('Error: Please check your inputs.')
       return
     }
-    const code = new Code()
+    const code = new GeneratorCode()
     this.display.update(code.value)
     const share = new ShareURL()
     share.display()
