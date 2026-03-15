@@ -15,7 +15,7 @@ class ComponentNextSelector {
   }
   static forLoad(element, data) {
     const stale = new ComponentNextSelector(element)
-    return stale.set(element, data.selector)
+    return stale.set(element, data)
   }
 }
 
@@ -36,7 +36,7 @@ class ComponentNextMargin {
   }
   static forLoad(element, data) {
     const stale = new ComponentNextMargin(element)
-    return stale.set(element, data.margin)
+    return stale.set(element, data)
   }
 }
 
@@ -53,8 +53,8 @@ export class ComponentNext {
     Object.freeze(this)
   }
   static forLoad(element, data) {
-    const selector = ComponentNextSelector.forLoad(element.querySelector('[data-next="selector"]'), data)
-    const margin = ComponentNextMargin.forLoad(element.querySelector('[data-next="margin"]'), data)
+    const selector = ComponentNextSelector.forLoad(element.querySelector('[data-next="selector"]'), data.selector)
+    const margin = ComponentNextMargin.forLoad(element.querySelector('[data-next="margin"]'), data.margin)
     return new ComponentNext(element, selector, margin)
   }
 }
