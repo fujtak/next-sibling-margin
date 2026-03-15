@@ -21,7 +21,7 @@ class Generator {
     this.element.removeAttribute('disabled')
   }
   #disable() {
-    this.element.setAttribute('disabled', 'valid')
+    this.element.setAttribute('disabled', 'true')
     this.display.clear()
   }
   #update() {
