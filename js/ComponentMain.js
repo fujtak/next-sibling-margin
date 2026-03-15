@@ -14,6 +14,7 @@ class ComponentMainSelector {
   }
   static forLoad() {
     const stale = new ComponentMainSelector()
+    if(!params.main) return stale
     const value = params.main.selector
     return stale.set(value)
   }
@@ -27,6 +28,6 @@ export class ComponentMain {
   }
   static forLoad() {
     const selector = ComponentMainSelector.forLoad()
-    return new ComponentMain({ selector })
+    return new ComponentMain(selector)
   }
 }

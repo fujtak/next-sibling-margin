@@ -30,7 +30,7 @@ class Generator {
   }
   initialize() {
     this.element.addEventListener('click', () => this.#generate())
-    setInterval(() => this.#update(), 300)
+    setInterval(() => this.#update(), 100)
   }
 }
 
