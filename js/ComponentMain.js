@@ -1,4 +1,6 @@
 
+import { params } from "./Params.js";
+
 class ComponentMainSelector {
   constructor() {
     this.element = document.querySelector('[data-component-main="selector"]')
@@ -12,8 +14,7 @@ class ComponentMainSelector {
   }
   static forLoad() {
     const stale = new ComponentMainSelector()
-    const params = new URL(document.location).searchParams
-    const value = params.get('main')
+    const value = params.main.selector
     return stale.set(value)
   }
 }
