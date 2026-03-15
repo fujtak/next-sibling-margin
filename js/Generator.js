@@ -1,5 +1,6 @@
 import { Varidator } from './Varidator.js';
 import { Code } from './Code.js';
+import { ShareURL } from './ShareURL.js';
 import { display } from './Display.js';
 
 class Generator {
@@ -16,6 +17,8 @@ class Generator {
     }
     const code = new Code()
     this.display.update(code.value)
+    const share = new ShareURL()
+    share.display()
   }
   #enable() {
     this.element.removeAttribute('disabled')
@@ -23,6 +26,8 @@ class Generator {
   #disable() {
     this.element.setAttribute('disabled', 'true')
     this.display.clear()
+    const share = new ShareURL()
+    share.clear()
   }
   #update() {
     const varidator = new Varidator()
