@@ -12,8 +12,8 @@ class NextComponentAdd {
     const clone = this.template.content.cloneNode(true)
     this.wrapper.appendChild(clone)
   }
-  addEventListener() {
-    this.cssGenerator.addEventListener()
+  initialize() {
+    this.cssGenerator.initialize()
     this.trigger.addEventListener('click', () => this.#add())
   }
 }

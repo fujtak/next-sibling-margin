@@ -1,22 +1,12 @@
-import { CSSGeneratorCalculator } from './CSSGeneratorCalculator.js';
+import { cssGeneratorTrigger } from "./CSSGeneratorTrigger.js";
 
 class CSSGenerator {
   constructor() {
-    this.trigger = document.querySelector('[data-css-generator="trigger"]')
-    this.display = document.querySelector('[data-css-generator="display"]')
+    this.trigger = cssGeneratorTrigger
     Object.freeze(this)
   }
-  #generate() {
-    const calculator = new CSSGeneratorCalculator()
-    if(!calculator.isVarid) {
-      window.alert('Error: Please check your inputs.')
-      this.display.textContent = ''
-      return
-    }
-    this.display.textContent = calculator.code
-  }
-  addEventListener() {
-    this.trigger.addEventListener('click', () => this.#generate())
+  initialize() {
+    this.trigger.initialize()
   }
 }
 
