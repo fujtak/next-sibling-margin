@@ -1,3 +1,5 @@
-import { nextComponentAdd } from "./NextComponentAdd.js";
+import { generator } from "./Generator.js";
+import { componentNextAdd } from "./ComponentNextAdd.js";
 
-nextComponentAdd.initialize()
+generator.initialize()
+componentNextAdd.initialize()

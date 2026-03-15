@@ -19,20 +19,20 @@
     <h1>Generate next sibling margin</h1>
   
     <h2>Component</h2>
-    <label>css selector: <input type="text" placeholder=".example" required data-css-generator-component="selector"></label>
+    <label>css selector: <input type="text" placeholder=".example" required data-component-main="selector"></label>
   
     <h2>Next components</h2>
     <div data-next-component-add="wrapper"></div>
     <button data-next-component-add="trigger">Add</button>
   
     <h2>CSS Code</h2>
-    <code data-css-generator="display"></code>
-    <button data-css-generator="trigger" disabled>Generate</button>
+    <code data-display="wrapper"></code>
+    <button data-generator="trigger" disabled>Generate</button>
   
     <template data-next-component-add="template">
-      <div data-css-generator-next="root">
-        <label>css selector: <input type="text" placeholder=".example" required data-css-generator-next="selector"></label>
-        <label><span>🔝</span>margin-top: <input type="number" value="0" min="0" required data-css-generator-next="margin">px</label>
+      <div data-next="root">
+        <label>css selector: <input type="text" placeholder=".example" required data-next="selector"></label>
+        <label><span>🔝</span>margin-top: <input type="number" value="0" min="0" required data-next="margin">px</label>
       </div>
     </template>
   </main>

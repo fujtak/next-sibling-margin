@@ -1,4 +1,4 @@
-class CSSGeneratorComponentNextSelector {
+class ComponentNextSelector {
   constructor({ element }) {
     if(!element) {
       console.error(`Invarid element: ${element}`)
@@ -11,7 +11,7 @@ class CSSGeneratorComponentNextSelector {
   }
 }
 
-class CSSGeneratorComponentNextMargin {
+class ComponentNextMargin {
   constructor({ element }) {
     if(!element) {
       console.error(`Invarid element: ${element}`)
@@ -24,15 +24,15 @@ class CSSGeneratorComponentNextMargin {
   }
 }
 
-export class CSSGeneratorComponentNext {
+export class ComponentNext {
   constructor({ element }) {
     if(!element) {
       console.error(`Invarid element: ${element}`)
       return
     }
     this.element = element
-    this.selector = new CSSGeneratorComponentNextSelector({ element: this.element.querySelector('[data-css-generator-next="selector"]') })
-    this.margin = new CSSGeneratorComponentNextMargin({ element: this.element.querySelector('[data-css-generator-next="margin"]') })
+    this.selector = new ComponentNextSelector({ element: this.element.querySelector('[data-next="selector"]') })
+    this.margin = new ComponentNextMargin({ element: this.element.querySelector('[data-next="margin"]') })
     this.isVarid = this.selector.isVarid && this.margin.isVarid
     Object.freeze(this)
   }

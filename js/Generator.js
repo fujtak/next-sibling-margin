@@ -1,20 +1,20 @@
-import { CSSGeneratorVaridator } from './CSSGeneratorVaridator.js';
-import { CSSGeneratorCode } from './CSSGeneratorCode.js';
-import { cssGeneratorDisplay } from './CSSGeneratorDisplay.js';
+import { Varidator } from './Varidator.js';
+import { Code } from './Code.js';
+import { display } from './Display.js';
 
-class CSSGeneratorTrigger {
+class Generator {
   constructor() {
-    this.element = document.querySelector('[data-css-generator="trigger"]')
-    this.display = cssGeneratorDisplay
+    this.element = document.querySelector('[data-generator="trigger"]')
+    this.display = display
     Object.freeze(this)
   }
   #generate() {
-    const varidator = new CSSGeneratorVaridator()
+    const varidator = new Varidator()
     if(!varidator.isVarid) {
       window.alert('Error: Please check your inputs.')
       return
     }
-    const code = new CSSGeneratorCode()
+    const code = new Code()
     this.display.update(code.value)
   }
   #enable() {
@@ -25,7 +25,7 @@ class CSSGeneratorTrigger {
     this.display.clear()
   }
   #update() {
-    const varidator = new CSSGeneratorVaridator()
+    const varidator = new Varidator()
     varidator.isVarid ? this.#enable() : this.#disable()
   }
   initialize() {
@@ -34,4 +34,4 @@ class CSSGeneratorTrigger {
   }
 }
 
-export const cssGeneratorTrigger = new CSSGeneratorTrigger()
+export const generator = new Generator()
