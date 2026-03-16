@@ -17,3 +17,6 @@ input[type="number"] {
 section {
   padding-inline: 1em;
 }
+.section-share {
+  padding-bottom: 32px;
+}
