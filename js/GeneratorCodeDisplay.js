@@ -9,8 +9,7 @@ class GeneratorCodeDisplay {
   }
   update(code) {
     if(this.#isHover) return
-    const text = code ? code : ''
-    this.element.textContent = text
+    this.element.textContent = code ?? ''
   }
 }
 

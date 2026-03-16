@@ -8,7 +8,7 @@ export class GeneratorCode {
   constructor() {
     this.main = new ComponentMain()
     this.nextList = ComponentNextList.for()
-    this.isVarid = (this.nextList.length > 0) && (this.nextList.reduce((prev, current) => prev && current.isVarid, this.main.isVarid))
+    this.isVarid = (this.nextList.length > 0) && [this.main, ...this.nextList].every(component => component.isVarid)
     Object.freeze(this)
   }
   get value() {

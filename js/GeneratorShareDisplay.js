@@ -10,8 +10,7 @@ class GeneratorShareDisplay {
   }
   update(url) {
     if(this.#isHover) return
-    const text = url ? url : ''
-    this.element.textContent = text
+    this.element.textContent = url ?? ''
   }
 }
 
