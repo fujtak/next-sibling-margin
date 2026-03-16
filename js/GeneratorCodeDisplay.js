@@ -1,14 +1,12 @@
-class GeneratorDisplay {
+class GeneratorCodeDisplay {
   constructor() {
     this.element = document.querySelector('[data-display="wrapper"]')
     Object.freeze(this)
   }
-  clear() {
-    this.element.textContent = ''
-  }
-  update(text) {
+  update(code) {
+    const text = code ? code : ''
     this.element.textContent = text
   }
 }
 
-export const generatorDisplay = new GeneratorDisplay()
+export const generatorCodeDisplay = new GeneratorCodeDisplay()

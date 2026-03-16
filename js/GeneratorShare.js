@@ -1,14 +1,13 @@
 import { ComponentMain } from './ComponentMain.js';
 import { ComponentNextList } from './ComponentNextList.js'
 
-export class ShareURL {
+export class GeneratorShare {
   constructor() {
-    this.element = document.querySelector('[data-share-display="wrapper"]')
     this.main = new ComponentMain()
     this.nextList = ComponentNextList.for()
     Object.freeze(this)
   }
-  #generate() {
+  get url() {
     const url = new URL(document.location)
     const params = url.searchParams
     params.append('main-selector', this.main.selector.value)
@@ -18,11 +17,5 @@ export class ShareURL {
       params.append(`next${i}-margin`, next.margin.value)
     }
     return url
-  }
-  clear() {
-    this.element.textContent = ''
-  }
-  display() {
-    this.element.textContent = this.#generate()
   }
 }

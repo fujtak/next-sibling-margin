@@ -1,42 +1,40 @@
 import { Varidator } from './Varidator.js';
-import { ShareURL } from './ShareURL.js';
 
 import { GeneratorCode } from './GeneratorCode.js';
-import { generatorDisplay } from './GeneratorDisplay.js';
+import { generatorCodeDisplay } from './GeneratorCodeDisplay.js';
+import { GeneratorShare } from './GeneratorShare.js';
+import { generatorShareDisplay } from './GeneratorShareDisplay.js';
 
 class Generator {
   constructor() {
-    this.element = document.querySelector('[data-generator="trigger"]')
-    this.display = generatorDisplay
+    this.codeDisplay = generatorCodeDisplay
+    this.shareDisplay = generatorShareDisplay
     Object.freeze(this)
   }
-  #generate() {
+  #code() {
     const varidator = new Varidator()
     if(!varidator.isVarid) {
-      window.alert('Error: Please check your inputs.')
-      return
+      return ''
     }
     const code = new GeneratorCode()
-    this.display.update(code.value)
-    const share = new ShareURL()
-    share.display()
+    return code.value
   }
-  #enable() {
-    this.element.removeAttribute('disabled')
-  }
-  #disable() {
-    this.element.setAttribute('disabled', 'true')
-    this.display.clear()
-    const share = new ShareURL()
-    share.clear()
-  }
-  #update() {
+  #url() {
     const varidator = new Varidator()
-    varidator.isVarid ? this.#enable() : this.#disable()
+    if(!varidator.isVarid) {
+      return ''
+    }
+    const share = new GeneratorShare()
+    return share.url
+  }
+  #display() {
+    const code = this.#code()
+    this.codeDisplay.update(code)
+    const url = this.#url()
+    this.shareDisplay.update(url)
   }
   initialize() {
-    this.element.addEventListener('click', () => this.#generate())
-    setInterval(() => this.#update(), 100)
+    setInterval(() => this.#display(), 100)
   }
 }
 
