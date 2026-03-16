@@ -6,32 +6,38 @@
   <title>Share next sibling margin-top🧱</title>
   <link rel="stylesheet" href="./main.css">
   <meta name="google-site-verification" content="H69tkdwQKngMf50TAgeNunnLq5Kbu_s1qZwfDGV6mAw" />
-  <meta http-equiv="content-security-policy" content="default-src 'self'" />
+  <!-- <meta http-equiv="content-security-policy" content="default-src 'self'" /> -->
 </head>
 <body>
   <main>
-    <h1>Share next sibling margin-top🧱</h1>
+    <section>
+      <h1>Share next sibling margin-top🧱</h1>
+      <label>css selector: <input type="text" placeholder=".example" required data-component-main="selector"></label>
+    </section>
 
-    <label>css selector: <input type="text" placeholder=".example" required data-component-main="selector"></label>
+    <section>
+      <h2>Next siblings</h2>
+      <div data-next-component-add="wrapper"></div>
+      <button data-next-component-add="trigger">Add</button>
+    </section>
 
-    <h2>Next siblings</h2>
-    <div data-next-component-add="wrapper"></div>
-    <button data-next-component-add="trigger">Add</button>
-
-    <h2>CSS & Share URL</h2>
-    <code data-display="wrapper"></code>
-    <p data-share-display="wrapper"></p>
+    <section data-display="root">
+      <h2>CSS & Share URL</h2>
+      <code data-code-display="wrapper"></code>
+      <p data-share-display="wrapper"></p>
+    </section>
   
     <template data-next-component-add="template">
       <div data-next="root">
         <label>css selector: <input type="text" placeholder=".example" required data-next="selector"></label>
-        <label><span>🔝</span>margin-top: <input type="number" value="0" min="0" required data-next="margin">px</label>
+        <label><span>🔝</span>margin-top(PC): <input type="number" value="0" min="0" required data-next="marginPc">px</label>
+        <label><span>🔝</span>margin-top(SP): <input type="number" value="0" min="0" required data-next="marginSp">px</label>
       </div>
     </template>
   </main>
 
   <footer>
-    contact: <a href="mailto:takuya.fujimaki.develop@gmail.com" rel="nofollow">takuya.fujimaki.develop@gmail.com</a>
+    <section>contact: <a href="mailto:takuya.fujimaki.develop@gmail.com" rel="nofollow">takuya.fujimaki.develop@gmail.com</a></section>
   </footer>
 
   <script src="./js/main.js" type="module"></script>
