@@ -1,3 +1,4 @@
+import { ComponentNextList } from './ComponentNextList.js';
 
 class ComponentNextAdd {
   constructor() {
@@ -10,11 +11,16 @@ class ComponentNextAdd {
     const clone = this.template.content.cloneNode(true)
     this.wrapper.appendChild(clone)
   }
+  #onClick() {
+    this.#add()
+    const latest = ComponentNextList.for().at(-1)
+    latest.addEventListener()
+  }
   click() {
     this.trigger.click()
   }
   initialize() {
-    this.trigger.addEventListener('click', () => this.#add())
+    this.trigger.addEventListener('click', () => this.#onClick())
   }
 }
 

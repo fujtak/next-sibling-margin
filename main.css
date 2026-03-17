@@ -20,3 +20,6 @@ section {
 .section-share {
   padding-bottom: 32px;
 }
+.button-delete {
+  display: inline-block;
+}

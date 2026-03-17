@@ -68,11 +68,18 @@ export class ComponentNext {
       return
     }
     this.element = element
+    this.delete = this.element.querySelector('[data-next="delete"]')
     this.selector = selector ?? new ComponentNextSelector(this.element.querySelector('[data-next="selector"]'))
     this.marginPc = marginPc ?? new ComponentNextMarginPc(this.element.querySelector('[data-next="marginPc"]'))
     this.marginSp = marginSp ?? new ComponentNextMarginSp(this.element.querySelector('[data-next="marginSp"]'))
     this.isVarid = this.selector.isVarid && this.marginPc.isVarid && this.marginSp.isVarid
     Object.freeze(this)
+  }
+  #delete() {
+    this.element.remove()
+  }
+  addEventListener() {
+    this.delete.addEventListener('click', () => this.#delete())
   }
   static forLoad(element, data) {
     const selector = ComponentNextSelector.forLoad(element.querySelector('[data-next="selector"]'), data.selector)
