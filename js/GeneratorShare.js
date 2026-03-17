@@ -10,7 +10,7 @@ export class GeneratorShare {
   }
   get url() {
     if(!this.isVarid) return
-    const url = new URL(document.location)
+    const url = new URL(document.location.origin + document.location.pathname)
     const params = url.searchParams
     params.append('main-selector', this.main.selector.value)
     for(let i = 0; i < this.nextList.length; ++i) {
