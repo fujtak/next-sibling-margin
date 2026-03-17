@@ -3,10 +3,7 @@ body {
 }
 code {
   white-space: pre;
-}
-button {
-  display: block;
-  margin-top: 1em;
+  line-height: 1.5;
 }
 label {
   display: inline-block;
@@ -14,11 +11,21 @@ label {
 input[type="number"] {
   width: 4em;
 }
-section {
-  padding-inline: 1em;
+.inner {
+  padding-inline: 16px;
 }
-.section-share {
-  padding-bottom: 32px;
+h2:has(+ .display) {
+  margin-bottom: 10px;
+}
+.display {
+  margin: 0;
+  display: block;
+  width: fit-content;
+  padding: 10px 16px;
+}
+.button-add {
+  display: block;
+  margin-top: 16px;
 }
 .button-delete {
   display: inline-block;
