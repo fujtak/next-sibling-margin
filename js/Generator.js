@@ -15,8 +15,9 @@ class Generator {
     const share = new GeneratorShare()
     this.shareDisplay.update(share.url)
   }
-  initialize() {
-    setInterval(() => this.#display(), 100)
+  loop() {
+    this.#display()
+    requestAnimationFrame(() => this.loop())
   }
 }
 

@@ -3,7 +3,7 @@ import { componentNextAdd } from "./ComponentNextAdd.js";
 import { ComponentMain } from "./ComponentMain.js";
 import { ComponentNextList } from "./ComponentNextList.js";
 
-generator.initialize()
+generator.loop()
 componentNextAdd.initialize()
 
 ComponentMain.forLoad()
