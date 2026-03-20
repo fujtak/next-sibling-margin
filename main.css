@@ -14,14 +14,9 @@ input[type="number"] {
 .inner {
   padding-inline: 16px;
 }
-h2:has(+ .display) {
-  margin-bottom: 10px;
-}
 .display {
-  margin: 0;
   display: block;
   width: fit-content;
-  padding: 10px 16px;
 }
 .button-add {
   display: block;

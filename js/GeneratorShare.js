@@ -19,6 +19,6 @@ export class GeneratorShare {
       params.append(`next${i}-marginPc`, next.marginPc.value)
       params.append(`next${i}-marginSp`, next.marginSp.value)
     }
-    return url
+    return url.href
   }
 }

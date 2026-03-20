@@ -17,7 +17,7 @@ class Generator {
   }
   loop() {
     this.#display()
-    requestAnimationFrame(() => this.loop())
+    setTimeout(() => this.loop(), 100)
   }
 }
 
