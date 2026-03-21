@@ -12,7 +12,7 @@
   <main>
     <section class="inner">
       <h1>Share next sibling margin-top🧱</h1>
-      <label>css selector: <input type="text" placeholder=".example" required data-component-main="selector"></label>
+      <label>css selector: <input type="text" placeholder=".example" pattern="[^:;\{\}]" required data-component-main="selector"></label>
     </section>
 
     <section class="inner">
@@ -29,7 +29,7 @@
   
     <template data-next-component-add="template">
       <div data-next="root">
-        <label>css selector: <input type="text" placeholder=".example" required data-next="selector"></label>
+        <label>css selector: <input type="text" placeholder=".example" pattern="[^:;\{\}]" required data-next="selector"></label>
         <label><span>🔝</span>margin-top(PC): <input type="number" value="0" min="0" required data-next="marginPc">px</label>
         <label><span>🔝</span>margin-top(SP): <input type="number" value="0" min="0" required data-next="marginSp">px</label>
         <button class="button-delete" data-next="delete">Delete</button>
